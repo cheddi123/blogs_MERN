@@ -36,7 +36,7 @@ class Detail extends Component {
 				// console.log(date)
 				this.setState({
 					blog: res.data,
-					loadresponse: res.data.responses,
+					loadresponse: res.data.responses.slice(1),
 					time: moment(res.data.date).format('LLL'),
 				});
 			})
@@ -83,10 +83,7 @@ class Detail extends Component {
 		const userdata = this.state.blog;
 
 		const { topic, author, synopsis } = userdata;
-		// const z = userdata;
-		// const responseDisplay = this.state.loadresponse;
-		// this.Loadresponses(z)
-
+		
 		return (
 			<div style={{ height: '100%' }}>
 				<Container fluid>
